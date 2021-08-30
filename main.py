@@ -42,10 +42,8 @@ def process(path):
   data = tf.reshape(data, [1, 300, 300, 3])
   prediction = model.predict(data)
   predict.configure(text = f"Rock: {int(prediction[0][0]*100)}%\nPaper: {int(prediction[0][1]*100)}%\nScissors: {int(prediction[0][2]*100)}%")
-  
-def enter(): process(pathfield.get())
 
-e = Button(root, text = 'Enter', padx = 30, pady = 20, bg = VERY_DARK, fg = ORANGE, command = enter, activeforeground = KINDA_DARK, bd = 0, font = "Helvetica 14")
+e = Button(root, text = 'Enter', padx = 30, pady = 20, bg = VERY_DARK, fg = ORANGE, command = lambda: process(pathfield.get()), activeforeground = KINDA_DARK, bd = 0, font = "Helvetica 14")
 e.grid(row = 0, column = 1, padx = 10, pady = 30)
 
 root.mainloop()
