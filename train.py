@@ -26,15 +26,15 @@ test_data = test_data.prefetch(AUTOTUNE)
 
 model = keras.Sequential([
   keras.layers.InputLayer((300, 300, 3)),
-  keras.layers.Conv2D(350, 3, activation = 'relu'),
+  keras.layers.Conv2D(400, 3, activation = 'relu'),
   keras.layers.MaxPooling2D(2, 2),
-  keras.layers.Conv2D(350, 3, activation = 'relu'),
+  keras.layers.Conv2D(400, 3, activation = 'relu'),
   keras.layers.MaxPooling2D(2, 2),
-  keras.layers.Conv2D(350, 3, activation = 'relu'),
+  keras.layers.Conv2D(400, 3, activation = 'relu'),
   keras.layers.MaxPooling2D(2, 2),
   keras.layers.Flatten(),
   keras.layers.Dropout(0.5),
-  keras.layers.Dense(700, activation = 'relu'),
+  keras.layers.Dense(750, activation = 'relu'),
   keras.layers.Dense(3, activation = 'softmax')
 ])
 
