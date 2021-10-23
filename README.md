@@ -73,7 +73,7 @@ model = keras.Sequential([
   keras.layers.Dense(3, activation = 'softmax')
 ])
 ```
-We are using a `Sequential` model, meaning each layer is 'piled up' next to each other. We have an `InputLayer` with shape of (300, 300, 3). This is because the images in our dataset are 300x300 and every pixel is divided into 3 color channels (r, g, b)
+We are using a `Sequential` model, meaning each layer is 'piled up' next to each other. We have an `InputLayer` with shape of (300, 300, 3). This is because the images in our dataset are 300x300 and every pixel is divided into 3 color channels (r, g, b). Here are the other layers used:
 - `Conv2D`, or Convolutional 2D layer, performs some calculation over each pixel in whatever input it gets, acting like a 'filter'
 - `MaxPooling2D` layers downsample its inputs, so less calculations need to be made
 - `Flatten` layers flatten its input into a 1-dimensional array (For example: ```[[1, 2], [3, 4, 5]] --> [1, 2, 3, 4, 5]```)
@@ -97,4 +97,14 @@ model.compile(
 
 model.fit(train_data, epochs = 5)
 model.evaluate(test_data)
+```
+After we created the model, we have to compile the model with an optimizer algorithm, a loss function and a list of metrics to keep track of while the model is training:
+- `adam` is one of, if not the best, adaptive optimizer algorithm, which is why we are using it
+- `sparse_categorical_crossentropy` loss function will be used as our dataset is categorized into mutually exclusive categories (Rock, Paper, Scissors)
+- The `accuracy` metric is the only metric we will have to keep track of in this case
+
+Finally, we use `model.fit()` to start training our model. In this case we are using the `train_data` to train the model, and we are going to train the model over 5 epochs. After training is done, we run a test with data our model has not seen (`test_data`) to see how it does. After this test is done and its final accuracy is shown, the last 2 lines prompt the user to click enter to save the model to `C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5`:
+```python
+input("CLICK ENTER TO SAVE MODEL > ")
+model.save(r'C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5')
 ```
