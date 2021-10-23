@@ -83,3 +83,18 @@ We are using a `Sequential` model, meaning each layer is 'piled up' next to each
 Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activation function. In our model we are using 2 different functions:
 - `ReLU` activation, or 'Rectified Linear Unit' activation, turns every negative value into a 0
 - `Softmax` activation normalizes its input into a list of probabilities, which is why we are using it in the final layer of our model
+
+<img src="https://www.researchgate.net/publication/341158371/figure/fig4/AS:887822487674882@1588684784520/Rectified-linear-unit-ReLU-activation-function.ppm" alt="ReLU graph" width="300">
+<img src="https://www.kindpng.com/picc/m/454-4548627_softmax-activation-function-hd-png-download.png" alt="Softmax graph" width="300">
+
+Finally, lets train, test and save our model:
+```python
+model.compile(
+  optimizer = 'adam',
+  loss = 'sparse_categorical_crossentropy',
+  metrics = ['accuracy'] 
+)
+
+model.fit(train_data, epochs = 5)
+model.evaluate(test_data)
+```
