@@ -54,8 +54,7 @@ test_data = test_data.map(normalize, num_parallel_calls = AUTOTUNE)
 test_data = test_data.batch(4)
 test_data = test_data.prefetch(AUTOTUNE)
 ```
-Using `tf.data.experimental.AUTOTUNE` basically means we let tensorflow decide stuff for us
-All you need to know about this section is that we are 'preparing' the data for the model to see and try to categorize later on
+Using `tf.data.experimental.AUTOTUNE` basically means we let tensorflow decide stuff for us. All you need to know about this section is that we are 'preparing' the data for the model to see and try to categorize later on
 
 Let's now get to making our model 'structure':
 ```python
