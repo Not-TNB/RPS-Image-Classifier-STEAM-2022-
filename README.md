@@ -83,11 +83,22 @@ Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activ
 - `ReLU` activation, or 'Rectified Linear Unit' activation, turns every negative value into a 0
 - `Softmax` activation normalizes its input into a list of probabilities, which is why we are using it in the final layer of our model<br><br>
 
-<img src="https://www.researchgate.net/publication/341158371/figure/fig4/AS:887822487674882@1588684784520/Rectified-linear-unit-ReLU-activation-function.ppm" alt="ReLU graph" width="300">
-Fig 1. ReLU graph<br><br><br>
+**More About Softmax**
 
-<img src="https://www.kindpng.com/picc/m/454-4548627_softmax-activation-function-hd-png-download.png" alt="Softmax graph" width="300">
-Fig 2. Softmax graph<br><br><br>
+The Softmax activation function is written as <img src="https://latex.codecogs.com/svg.latex?\inline&space;\large&space;\sigma(z)" title="\large \sigma(z)" /> where z is a vector in any dimension.
+<br><br>
+
+> **ReLU graph**
+> 
+> <img src="https://www.researchgate.net/publication/341158371/figure/fig4/AS:887822487674882@1588684784520/Rectified-linear-unit-ReLU-activation-function.ppm" alt="ReLU graph" width="300">
+
+<br>
+
+> **Softmax graph**
+> 
+> <img src="https://www.kindpng.com/picc/m/454-4548627_softmax-activation-function-hd-png-download.png" alt="Softmax graph" width="300">
+
+<br>
 
 Finally, lets train, test and save our model:
 ```python
