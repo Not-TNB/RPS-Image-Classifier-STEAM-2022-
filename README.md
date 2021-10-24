@@ -23,7 +23,7 @@ def normalize(img, label): return tf.cast(img, tf.float32)/255.0, label
 ```
 This function will take in an array of numbers `img` and a label `label`. It then turns the numbers into `float32` numbers and divides every number in `img` by 255. This is because `img` will be image data, which is from 0 to 255, and we 'shrink' it down into 0-1 to normalize it, so we divide it by 255
 
-Now we get to our dataset. First we take our model:
+Now we get to our dataset. First we have to retrieve our dataset:
 ```python
 (train_data, test_data), dsinfo = tfds.load(
   'rock_paper_scissors',
