@@ -85,7 +85,11 @@ Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activ
 
 **More About Softmax**
 
-The Softmax activation function is written as <img src="https://latex.codecogs.com/svg.latex?\inline&space;\large&space;\sigma(z)" title="\large \sigma(z)" /> where z is a vector in any dimension.
+The Softmax activation function <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}\sigma:&space;\mathbb{R}^x&space;\mapsto&space;[0,&space;1]^x}" title="{\color{Teal}\sigma: \mathbb{R}^x \mapsto [0, 1]^x}" /> is defined as:
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}\sigma(z)_i&space;=&space;\frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" title="{\color{Teal}\sigma(z)_i = \frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" />
+
+for <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}i=1,&space;2,&space;...,&space;x}" title="{\color{Teal}i=1, 2, ..., x}" /> and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}z&space;=&space;\left&space;\{z_1...z_k\right\}\in&space;\mathbb{R}^x}" title="{\color{Teal}z = \left \{z_1...z_k\right\}\in \mathbb{R}^x}" />
 <br><br>
 
 > **ReLU graph**
