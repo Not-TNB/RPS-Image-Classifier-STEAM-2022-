@@ -1,8 +1,8 @@
 # RPSIC (Rock Paper Scissors Image Classifier)
 For STEAM 2022 Science Fair :D
 <br><br>
-## CODE EXPLANATION
-### train.py
+## TRAIN.PY
+
 The purpose of `train.py` is to set up, train and save a model, which will be saved to ```RPSModel.h5```
 
 The first 4 lines of `train.py` imports `numpy`, `keras`, `tensorflow` and `tensorflow_datasets`:
@@ -83,22 +83,22 @@ Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activ
 - `ReLU` activation, or 'Rectified Linear Unit' activation, turns every negative value into a 0
 - `Softmax` activation normalizes its input into a list of probabilities, which is why we are using it in the final layer of our model<br><br>
 
-**More About Softmax**
+### **More About Softmax**
 
 The Softmax activation function <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}\sigma:&space;\mathbb{R}^x&space;\mapsto&space;[0,&space;1]^x}" title="{\color{Teal}\sigma: \mathbb{R}^x \mapsto [0, 1]^x}" /> is defined as:
 
 <img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}\sigma(z)_i&space;=&space;\frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" title="{\color{Teal}\sigma(z)_i = \frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" />
 
 for <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}i=1,&space;2,&space;...,&space;x}" title="{\color{Teal}i=1, 2, ..., x}" /> and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}z&space;=&space;\left&space;\{z_1...z_k\right\}\in&space;\mathbb{R}^x}" title="{\color{Teal}z = \left \{z_1...z_k\right\}\in \mathbb{R}^x}" />
-<br><br>
+<br><br><br>
 
-> **ReLU graph**
+> ### **ReLU graph**
 > 
 > <img src="https://www.researchgate.net/publication/341158371/figure/fig4/AS:887822487674882@1588684784520/Rectified-linear-unit-ReLU-activation-function.ppm" alt="ReLU graph" width="300">
 
 <br>
 
-> **Softmax graph**
+> ### **Softmax graph**
 > 
 > <img src="https://www.kindpng.com/picc/m/454-4548627_softmax-activation-function-hd-png-download.png" alt="Softmax graph" width="300">
 
