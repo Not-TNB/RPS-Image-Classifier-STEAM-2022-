@@ -120,6 +120,14 @@ After we created the model, we have to compile the model with an optimizer algor
 - `sparse_categorical_crossentropy` loss function will be used as our dataset is categorized into mutually exclusive categories (R, P, S)
 - The `accuracy` metric is the only metric we will have to keep track of in this case
 
+### **More About Sparse Categorial Crossentropy**
+
+Categorial Crossentropy (CCE) is distinct from Sparse Categorical Crossentopy (SCCE) as the latter is used when our categories are mutually exclusive. The formula for CCE is defined as:
+
+<img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}&space;Loss=-\sum_{k=1}^{C}p_k\log(q_k)}" title="{\color{Teal} Loss=-\sum_{k=1}^{C}p_k\log(q_k)}" />
+
+where <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;C}" title="{\color{Teal} C}" /> is the output size, <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;p_k}" title="{\color{Teal} p_k}" /> is the <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;k}" title="{\color{Teal} k}" />th value in the output and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;q_k}" title="{\color{Teal} q_k}" /> is the corresponding target value
+
 Finally, we use `model.fit()` to start training our model. In this case we are using the `train_data` to train the model, and we are going to train the model over 5 epochs. After training is done, we run a test with data our model has not seen (`test_data`) to see how it does. After this test is done and its final accuracy is shown, the last 2 lines prompt the user to click enter to save the model to `C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5`:
 ```python
 input("CLICK ENTER TO SAVE MODEL > ")
