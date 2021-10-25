@@ -38,7 +38,7 @@ We will split our data into `train_data` and `test_data`, and we will also get i
 `tfds.load()` loads a dataset from `tensorflow_datasets`. First, we have to specify what dataset we are using, which is `rock_paper_scissors`. Next, we can add in some extra arguments:
 - `split` the dataset into `train` and `test`
 - `shuffle_files` is set to True to randomly shuffle the items in the dataset
-- `as_supervised` is set to True as we are going to use `labels` as a kind of 'answer sheet' to the images the model will be training on
+- `as_supervised` is set to True as we are going to use training and testing labels as a kind of 'answer sheet' to the images the model will be training on
 - `with_info` is set to True so we can get the dataset info
 
 Now that we have our dataset, we can get to preprocessing our dataset:
