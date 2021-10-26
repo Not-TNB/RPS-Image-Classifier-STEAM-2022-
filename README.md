@@ -21,7 +21,7 @@ Next, we have a `normalize` function:
 ```python
 def normalize(img, label): return tf.cast(img, tf.float32)/255.0, label
 ```
-This function will take in an array of numbers `img` and a label `label`. It then turns the numbers into `float32` numbers and divides every number in `img` by 255. This is because `img` will be image data, which is from 0 to 255, and we 'shrink' it down into 0-1 to normalize it, so we divide it by 255
+This function will take in an array of numbers `img` and a label `label`. It then turns the numbers into `float32` numbers and divides every number in `img` by 255. This is because `img` will be image data, which is from 0 to 255, and we 'shrink' it down into 0-1 to normalize it, so we divide it by 255. Note that `normalize` leaves `label` as is
 
 Now we get to our dataset. First we have to retrieve our dataset:
 ```python
@@ -35,7 +35,7 @@ Now we get to our dataset. First we have to retrieve our dataset:
 ```
 We will split our data into `train_data` and `test_data`, and we will also get information about the dataset `dsinfo` (`dsinfo` is not needed for training its just good to understand our data)
 
-`tfds.load()` loads a dataset from `tensorflow_datasets`. First, we have to specify what dataset we are using, which is `rock_paper_scissors`. Next, we can add in some extra arguments:
+`tfds.load()` loads a dataset from `tensorflow_datasets`. First, we have to specify what dataset we are using, which is `rock_paper_scissors`. Next, we can add in some extra keyword arguments (`kwargs`):
 - `split` the dataset into `train` and `test`
 - `shuffle_files` is set to True to randomly shuffle the items in the dataset
 - `as_supervised` is set to True as we are going to use training and testing labels as a kind of 'answer sheet' to the images the model will be training on
@@ -72,7 +72,7 @@ model = keras.Sequential([
   keras.layers.Dense(3, activation = 'softmax')
 ])
 ```
-We are using a `Sequential` model, meaning each layer is 'piled up' next to each other. We have an `InputLayer` with shape of (300, 300, 3). This is because the images in our dataset are 300x300 and every pixel is divided into 3 color channels (r, g, b). Here are the other layers used:
+We are using a `Sequential` model, meaning each layer is placed one after another in a definite order. We have an `InputLayer` with shape of (300, 300, 3). This is because the images in our dataset are 300x300 and every pixel is divided into 3 color channels (r, g, b). Here are the other layers used:
 - `Conv2D`, or Convolutional 2D layer, performs some calculation over each pixel in whatever input it gets, acting like a 'filter'
 - `MaxPooling2D` layers downsample its inputs, so less calculations need to be made
 - `Flatten` layers flatten its input into a 1-dimensional array (For example: ```[[1, 2], [3, 4, 5]] --> [1, 2, 3, 4, 5]```)
