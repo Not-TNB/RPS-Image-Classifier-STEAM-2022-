@@ -89,7 +89,9 @@ The Softmax activation function <img src="https://latex.codecogs.com/gif.latex?\
 
 <img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}\sigma(z)_i&space;=&space;\frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" title="{\color{Teal}\sigma(z)_i = \frac{e^{z_i}}{\sum_{k=1}^{x}e^{z_k}}}" />
 
-for <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}i=1,&space;2,&space;...,&space;x}" title="{\color{Teal}i=1, 2, ..., x}" /> and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}z&space;=&space;\left&space;\{z_1...z_k\right\}\in&space;\mathbb{R}^x}" title="{\color{Teal}z = \left \{z_1...z_k\right\}\in \mathbb{R}^x}" />
+for <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}i=1,&space;2,&space;...,&space;x}" title="{\color{Teal}i=1, 2, ..., x}" /> and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}z&space;=&space;\left&space;\{z_1...z_k\right\}\in&space;\mathbb{R}^x}" title="{\color{Teal}z = \left \{z_1...z_k\right\}\in \mathbb{R}^x}" />. Note that the above function can also be expressed by the following:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\color{Teal}&space;\sigma(z)_i=\frac{e^{z_i}}{e^{z_1}&plus;e^{z_2}&plus;...&plus;e^{z_x}}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}&space;\sigma(z)_i=\frac{e^{z_i}}{e^{z_1}&plus;e^{z_2}&plus;...&plus;e^{z_x}}}" title="{\color{Teal} \sigma(z)_i=\frac{e^{z_i}}{e^{z_1}+e^{z_2}+...+e^{z_x}}}" /></a>
 <br><br><br>
 
 > ### **ReLU graph**
@@ -120,13 +122,19 @@ After we created the model, we have to compile the model with an optimizer algor
 - `sparse_categorical_crossentropy` loss function will be used as our dataset is categorized into mutually exclusive categories (R, P, S)
 - The `accuracy` metric is the only metric we will have to keep track of in this case
 
+<br>
+
 ### **More About Sparse Categorial Crossentropy**
 
 Categorial Crossentropy (CCE) is distinct from Sparse Categorical Crossentopy (SCCE) as the latter is used when our categories are mutually exclusive. The formula for CCE is defined as:
 
 <img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}&space;Loss=-\sum_{k=1}^{C}p_k\log(q_k)}" title="{\color{Teal} Loss=-\sum_{k=1}^{C}p_k\log(q_k)}" />
 
-where <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;C}" title="{\color{Teal} C}" /> is the output size, <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;p_k}" title="{\color{Teal} p_k}" /> is the <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;k}" title="{\color{Teal} k}" />th value in the output and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;q_k}" title="{\color{Teal} q_k}" /> is the corresponding target value
+where <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;C}" title="{\color{Teal} C}" /> is the output size, <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;p_k}" title="{\color{Teal} p_k}" /> is the <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;k}" title="{\color{Teal} k}" />th value in the output and <img src="https://latex.codecogs.com/gif.latex?\dpi{120}&space;{\color{Teal}&space;q_k}" title="{\color{Teal} q_k}" /> is the corresponding target value. Note that the above function can also be expressed by the following:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{150}&space;{\color{Teal}&space;Loss=-p_1\log{q_1}-p_2\log{q_2}-...-p_C\log{q_C}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{150}&space;{\color{Teal}&space;Loss=-p_1\log{q_1}-p_2\log{q_2}-...-p_C\log{q_C}}" title="{\color{Teal} Loss=-p_1\log{q_1}-p_2\log{q_2}-...-p_C\log{q_C}}" /></a>
+
+<br>
 
 Finally, we use `model.fit()` to start training our model. In this case we are using the `train_data` to train the model, and we are going to train the model over 5 epochs. After training is done, we run a test with data our model has not seen (`test_data`) to see how it does. After this test is done and its final accuracy is shown, the last 2 lines prompt the user to click enter to save the model to `C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5`:
 ```python
