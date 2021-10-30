@@ -3,7 +3,7 @@ For STEAM 2022 Science Fair :D
 <br><br>
 ## TRAIN.PY
 
-The purpose of `train.py` is to set up, train and save a model, which will be saved to ```RPSModel.h5```
+The purpose of the Python 3 file `train.py` is to set up, train and save a model, which will be saved to ```RPSModel.h5```
 
 The first 4 lines of `train.py` imports `numpy`, `keras`, `tensorflow` and `tensorflow_datasets`:
 ```python
