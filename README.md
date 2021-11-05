@@ -141,3 +141,8 @@ Finally, we use `model.fit()` to start training our model. In this case we are u
 input("CLICK ENTER TO SAVE MODEL > ")
 model.save(r'C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5')
 ```
+<br><br>
+
+### **CHANGES IN THE MODEL**
+
+As you have seen from our explanation, our original model will have 5 epochs of training. We found that this overfitted our midel, leading to a not-so-good 66% final accuracy. To 'fix' this, we set up another training session, this time with 3 epochs instead of 5. This is so that the model wont get so 'used' to dealing with the images in our train dataset
