@@ -3,7 +3,9 @@ For STEAM 2022 Science Fair :D
 <br><br>
 ## WHAT IS THIS?
 
-Hi! Welcome to Tristan, Steve and Louis's STEAM 2022 Project, which is a Rock Paper Scissors Image Classifier using Machine Learning, or RPSIC. This README file will be dedicated to explaining the code we used for our project, and we hope that this explanation is understandable for you!
+Hi! Welcome to Tristan, Steve and Louis's STEAM 2022 Project, which is a Rock Paper Scissors Image Classifier using Machine Learning, or RPSIC. This README file will be dedicated to explaining the code we used for our project
+
+Note that this explanation assumes that you, the reader, has some knowledge in programming and especially ```Python``` syntax!
 <br><br>
 ## TRAIN.PY
 
