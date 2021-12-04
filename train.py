@@ -44,7 +44,7 @@ model.compile(
   metrics = ['accuracy'] 
 )
 
-model.fit(train_data, epochs = 5)
+model.fit(train_data, epochs = 3)
 model.evaluate(test_data)
 
 input("CLICK ENTER TO SAVE MODEL > ")
