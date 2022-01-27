@@ -60,7 +60,7 @@ test_data = test_data.map(normalize, num_parallel_calls = AUTOTUNE)
 test_data = test_data.batch(4)
 test_data = test_data.prefetch(AUTOTUNE)
 ```
-Using `tf.data.experimental.AUTOTUNE` basically means we let tensorflow decide stuff for us. All you need to know about this section is that we are 'preparing' the data for the model to see and try to categorize later on
+Using `tf.data.experimental.AUTOTUNE` basically means we let tensorflow decide stuff for us. First we normalize `train_data`, then we cache it and shuffle up the data. Next, we batch it up and set the prefetch value for the caches. A similar process is done with `test_data`, but we do not need to cache or shuffle it as the content in `test_data` is not known to the model and `test_data` is small in comparison to `train_data`
 
 Let's now get to making our model 'structure':
 ```python
