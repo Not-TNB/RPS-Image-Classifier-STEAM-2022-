@@ -124,9 +124,9 @@ model.fit(train_data, epochs = 5)
 model.evaluate(test_data)
 ```
 After we created the model, we have to compile the model with an optimizer algorithm, a loss function and a list of metrics to keep track of while the model is training:
-- `adam` is one of, if not the best, adaptive optimizer algorithm, which is why we are using it
-- `sparse_categorical_crossentropy` loss function will be used as our dataset is categorized into mutually exclusive categories (R, P, S)
-- The `accuracy` metric is the only metric we will have to keep track of in this case
+- `adam` is one of the best adaptive optimizer algorithm, and is also used in image classification, which is why we are using it
+- `sparse_categorical_crossentropy` loss function will be used as our dataset is categorized into mutually exclusive categories (Rock, Paper, Scissors)
+- `accuracy` is the only metric listed, as we only need the percentage of images the model guessed correctly to make a conclusion
 
 <br>
 
@@ -147,8 +147,3 @@ Finally, we use `model.fit()` to start training our model. In this case we are u
 input("CLICK ENTER TO SAVE MODEL > ")
 model.save(r'C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5')
 ```
-<br><br>
-
-### **CHANGES IN THE MODEL**
-
-As you have seen from our explanation, our original model will have 5 epochs of training. We found that this overfitted our midel, leading to a not-so-good 66% final accuracy. To 'fix' this, we set up another training session, this time with 3 epochs instead of 5. This is so that the model wont get so 'used' to dealing with the images in our train dataset
