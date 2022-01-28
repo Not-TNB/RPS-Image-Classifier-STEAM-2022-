@@ -79,13 +79,13 @@ model = keras.Sequential([
 ])
 ```
 We are using a `Sequential` model, meaning each layer is placed one after another in a definite order. We have an `InputLayer` with shape of (300, 300, 3). This is because the images in our dataset are 300x300 and every pixel is divided into 3 color channels (r, g, b). Here are the other layers used:
-- `Conv2D`, or Convolutional 2D layer, performs some calculation over each pixel in whatever input it gets, acting like a 'filter'
-- `MaxPooling2D` layers downsample its inputs, so less calculations need to be made
+- `Conv2D`, or Convolutional 2D layer, performs some calculation over each pixel in whatever input it gets, acting like a 'filter' on the whole image
+- `MaxPooling2D` layers downsample its inputs, so less calculations need to be made and thus the training will not need as much resources
 - `Flatten` layers flatten its input into a 1 dimensional-array, such as `[[1, 2], [3, 4] --> [1, 2, 3, 4]`
 - `Dropout` layers randomly set some of its input into 0s to prevent overfitting
-- `Dense` layers have each of its nodes connected to every node of the next layer, which is why they are called `Dense` layers
+- `Dense` layers have each of its nodes connected to every node of the next layer, and is the most commonly used layer in artificial neural networks
 
-Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activation function. In our model we are using 2 different functions:
+Note that every layer (aside `InputLayer`, `Flatten` and `Dropout`) has an activation function, which . In our model we are using 2 different functions:
 - `ReLU` activation, or 'Rectified Linear Unit' activation, turns every negative value into a 0
 - `Softmax` activation normalizes its input into a list of probabilities, which is why we are using it in the final layer of our model<br><br>
 
