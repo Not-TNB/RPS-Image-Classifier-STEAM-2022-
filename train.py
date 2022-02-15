@@ -48,4 +48,4 @@ model.fit(train_data, epochs = 3)
 model.evaluate(test_data)
 
 input("CLICK ENTER TO SAVE MODEL > ")
-model.save(r'C:\Users\trist\Desktop\Code\Python 3.x\STEAM2022\RPSModel.h5')
+model.save(r'RPSModel.h5')
