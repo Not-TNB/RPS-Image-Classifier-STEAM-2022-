@@ -5,7 +5,7 @@ from tensorflow import keras
 import numpy as np
 import cv2
 
-model = keras.models.load_model(r'C:\Users\trist\Desktop\Code\Python_3\STEAM2022\RPSModel.h5')
+model = keras.models.load_model(r'RPSModel.h5')
 
 size = 300, 300
 def transform(path):
